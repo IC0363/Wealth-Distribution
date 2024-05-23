@@ -46,24 +46,24 @@ public class StudentData {
 
       
       /* populate formattedData array with data from unformattedData */
-      for(int r = 0; r<formattedData.length; r++){
-        for(int c = 0; c<formattedData[0].length; c++){
-            if(c<formattedData.length-1){
-              int k = unformattedData.get(r).indexOf(",");
-              formattedData[r][c] = unformattedData.get(r).substring(0,k);
-              unformattedData.set(r,unformattedData.get(r).substring(k+1));
-            }
-            else{
-              formattedData[r][c] = unformattedData.get(r).substring(0);
-            }
-        }
-
-      } 
-      for(int r = 0; r<formattedData.length; r++){
-        for(int c = 0; c<formattedData[0].length; c++){
-            
-
-      } 
+      for(int r =0;r<unformattedData.size();r++)
+      {
+          int c =1;
+          String line =unformattedData.get(r);
+          int k =line.indexOf(",");
+          formattedData[r][0]=line.substring(0,k);
+          line =line.substring(k+1);
+          k=line.indexOf(",");
+          while(k!=-1)
+          {
+              formattedData[r][c]=line.substring(0,k);
+              c++;
+              line=line.substring(k+1);
+              k=line.indexOf(",");
+          }
+          formattedData[r][c]=line;
+      }
+      
       
       
 
@@ -81,6 +81,14 @@ public class StudentData {
   
   /* Returns the row containing the country and year. Returns -1 if not found. */
   public int getRow(String countryName, String year) {
+
+  for(int r =0; r <formattedData.length;r++)
+  {
+      if((formattedData[r][0].equals(countryName))&&(formattedData[r][1].equals(year)))
+          {
+              return r;
+          }
+      }
   
     return -1;
   }
