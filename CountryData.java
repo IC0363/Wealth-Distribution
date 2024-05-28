@@ -28,19 +28,27 @@ public class CountryData {
     }
 
     public int totalIncome(){
+        if(incomeDeciles[0] !=-1){
         int count = 0;
         for(int i = 0; i<incomeDeciles.length; i++){
             count+=incomeDeciles[i];
         }
         return count;
+    } 
+    return 0;
+        
     }
 
     public double giniIndex(){
-        double count = 0;
-        for(int i)
+        if(incomeDeciles[0]!=-1){
+            int g = incomeDeciles[0]+2*(incomeDeciles[0] + incomeDeciles[1]);
+            for(int i = 2; incomeDeciles.length-1;i++){
+
+            }
 
         
-    }
+    
+}
 
     
 }
