@@ -70,7 +70,7 @@ public class CountryData {
                 g += 2 * (g + incomeDeciles[i]);
             }
             g += incomeDeciles[incomeDeciles.length - 1];
-            return (double) 0.1 / totalIncome() * g;
+            return((double)1.0- (0.1 / totalIncome())  *g) ;
         }
         return 0;
     }
