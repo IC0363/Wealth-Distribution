@@ -22,7 +22,8 @@ public class Driver {
             if (rawData.getRow(x, t) != -1) {
                 double b = country.giniIndex();
                 System.out.println(x + "'s Gini Index in " + t + " was " + b);
-            } else {
+            } 
+            else {
                 System.out.println("That country does not exist.");
             }
         }
