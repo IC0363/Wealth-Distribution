@@ -8,7 +8,7 @@ public class Driver {
         Scanner scan = new Scanner(System.in);
         String x = "";
         while (!x.equals("q")) {
-            System.out.println("Which country would you like to know the Gini index of (type q to quit)? Make sure to capitalize countries and leave out the spaces from countries with them (United States is UnitedStates)."); 
+            System.out.println("Which country would you like to know the Gini index of (type q to quit)? Make sure to capitalize countries. "); 
             x = scan.nextLine();
             if (x.equals("q")) {
                 break;
